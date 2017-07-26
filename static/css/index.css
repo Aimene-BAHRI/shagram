@@ -1,0 +1,342 @@
+body {
+    font-size: 16px;
+    line-height: 1.70;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 0px;
+}
+
+section {
+    padding: 50px 0px;
+}
+
+strong {
+    color: #27AE61;
+}
+
+a {
+    cursor: pointer;
+}
+
+/*input {
+    border-radius:
+}*/
+
+
+/*start NAVBAR style*/
+
+.navbar-default {
+    background-color: white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 0;
+    border-radius: 0;
+    max-height: 4vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99
+}
+
+
+/*.navbar-default .container {
+    width:1000px;
+}*/
+
+.navbar-brand {
+    font-size: 60%;
+}
+
+.logo {
+    margin-top: 0px;
+    padding: 1px;
+}
+
+.nav>li {
+    color: #27AE61;
+    background: white;
+}
+
+.nav>li>a {
+    display: inline-block;
+    padding: 14px 10px;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 500;
+}
+
+.navbar-default .navbar-nav>li>a,
+i {
+    color: rgb(39,174,97);
+    font-size: 70%;
+}
+
+.nav>li>a>i {
+    padding: 2px;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    background-color: rgb(39,174,97);
+    color: white;
+    transition: 0.4s;
+}
+
+.navbar-default .navbar-nav>li>a:hover i {
+    color: white;
+    transition: 0.4s;
+}
+
+
+/*end NAVBAR style*/
+
+
+/*container style*/
+
+main {
+    padding-top: 4vh;
+}
+
+
+/* end container style */
+
+
+/*start home style*/
+
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("../images/oran-fm.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 94vh;
+    text-align: center;
+}
+
+#home-describ {
+    color: white;
+    position: absolute;
+    top: 30vh;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px 0px;
+}
+
+#home-describ h1 {
+    font-weight: 100;
+    font-size: 500%;
+}
+
+#home-describ p {
+    font-weight: 500;
+    font-size: 70%;
+    opacity: 0.8;
+}
+
+#home-describ i {
+    color: #27AE61;
+    position: absolute;
+    top: 50vh;
+    font-size: 400%;
+}
+
+#sidi-houari-home-about {
+    background-image: url("../images/hi2.png");/*WIN RAHI hi2.png ???*/
+    background-position: 10% 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+
+#sidi-houari-home-about h1 {
+    font-size: 400%;
+    font-weight: 300;
+    color: #27AE61;
+    padding-bottom: 10px;
+}
+
+#sidi-houari-home-about h2 {
+    font-size: 250%;
+    /*font-weight:300;    */
+    padding: 10px;
+    text-transform: capitalize;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+#sidi-houari-home-about p {
+    font-size: 100%;
+}
+
+#sidi-houari-home-about img {
+    padding: 10px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+/*end of HOME About*/
+
+
+/*start ASSOCIATION about */
+
+#association-home-about {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../images/background2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 100%;
+    line-height: 2em
+}
+
+#association-home-about h1 {
+    font-weight: 300;
+}
+
+
+/*end ASSOCIATION about*/
+
+
+/*start PARTNERS about*/
+
+
+/*end PARTNERS about*/
+
+
+/*start FOOTER style */
+
+footer {
+    padding: 50px 0px;
+    background-color: #363636;
+    color: white;
+}
+
+#infos h3 {
+    font-size: 100%;
+}
+
+#infos {
+    border-left: 0.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url("../images/user-pict.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 30px 10px 30px 10px;
+}
+
+.caption {
+    text-align: left;
+}
+
+#portfolio {
+    text-align: left;
+}
+#portfolio .portfolio-item {
+    margin: 0 0 15px;
+    
+}
+#portfolio .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    background: rgba(39, 174, 97, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+}
+#portfolio .portfolio-item .portfolio-image{
+    background-color: green;
+    width: 100%;
+    height: 200px;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+    opacity: 1;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    font-size: 20px;
+    text-align: center;
+    top: 50%;
+    margin-top: -12px;
+    color: white;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+    margin-top: -12px;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+    margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    text-align: center;
+    padding: 25px;
+}
+#portfolio .portfolio-item .portfolio-caption h4 {
+    text-transform: none;
+    margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption p {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    margin: 0;
+}
+#portfolio * {
+    z-index: 2;
+}
+
+@media(max-width:767px) {
+    body {
+        font-size: 120%;
+    }
+    #sidi-houari-home-about img {
+        width: 300px;
+    }
+    #association-home-about {
+        text-align: center
+    }
+    #association-home-about img {
+        width: 300px;
+    }
+    #home-describ {
+        font-size: 80%;
+    }
+}
+
+@media(min-width:768px) {
+    body {
+        font-size: 130%;
+    }
+    #sidi-houari-home-about img {
+        width: 500px;
+    }
+}
+
+@media(min-width:992px) {
+    body {
+        font-size: 150%;
+    }
+    .navbar-default .container {
+        width: 900px;
+    }
+}
+
+@media(min-width:1200px) {
+    body {
+        font-size: 160%;
+    }
+    .navbar-default .container {
+        width: 1000px;
+    }
+}

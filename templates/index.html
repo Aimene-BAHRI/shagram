@@ -1,0 +1,100 @@
+
+{% extends 'base.html' %} 
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/style-articles.css' %}">
+{% block content %}
+<br>
+<br>
+<div class="container-fluid">
+    {% if events %}
+        {% for event in events %}
+            {% if event.timing > today %}
+                <div class="col-md-offset-0 col-md-12 text-right" style="color: aliceblue;
+                    background-image: url('https://bootsnipp.com/dist/img/header-bg.jpg?ver=2.0.0');
+                    background-size: cover">
+                    <div class="row">
+                        <div class="col-md-offsect-0 col-md-12 col-sm-12 col-xs-12">
+                            <div class="post">
+                                <h2 class="text-center"><strong>العنوان : </strong>{{event.title}}</h2> 
+                                <p><strong>الوصف : </strong>{{event.content}}</p>
+                                <div class="col-md-6  col-sm-6 col-xs-12"><p><strong>المكان : </strong>{{event.place}}</p></div>
+                                <div class="col-md-6  col-sm-6 col-xs-12"><p><strong>الزمان : </strong>{{event.timing}}</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            </hr>
+        {% endfor %}
+        <br>
+    {% endif %}
+    <br>
+    <div class="clo-xs-12 clo-sm-12 col-md-12 col-lg-12 col-md-offset-0 text-right" 
+    style="color: aliceblue;
+                    background-image: url('https://i.ytimg.com/vi/jNT3O4NlSTo/maxresdefault.jpg');
+                    background-size: cover">
+        <h1 class="text-center">الأقسام</h1>
+        {% if categories %} 
+            {% for category in categories %}
+            <button class="btn btn-default">
+                <a href="#">{{ category.title }}</a>
+            </button> 
+            {% endfor %} 
+            <hr>
+        {% endif %}
+    </div>
+    <hr>
+    <div class="col-md-offset-0 col-md-12 text-right">
+        <h1 class="text-center">المقالات</h1>
+        {% if posts %}
+            <div class="col-md-12 search-box">
+                <h3>البحث في المقالات</h3>
+                <form class="" action="index.html" method="post">
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <button class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> البحث </button>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <input type="text" class="form-control input-lg text-center" placeholder="ابحث عن مقالة حسب الكلمة الرئيسية">
+                    </div>
+                </div>
+                </form>
+            </div>
+            {% for post in posts %}
+                <div class="row" style="height: 500px;border:3px double #27AE61">    
+                    <div class="col-md-offset-0 col-md-12 col-sm-12 col-xs-12">
+                        <br>
+                        <div class="col-md-offset-0 col-md-8 col-sm-12 col-xs-12">
+                            <div class="post">
+                                <h2><strong>العنوان : </strong><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h2> 
+                                <hr>
+                                <p><strong>الوصف : </strong>{{post.body}}</p>
+                                <p><strong>الزمان : </strong>{{post.posted}}</p>
+                                <p><strong>القسم : </strong>{{post.categorie}}</p>
+                                <p><strong>الكاتب : </strong><a href="">{{post.author}}</a></p>
+                            </div>
+                        </div>
+                        <img class="col-md-offset-0 col-md-4 col-sm-12 col-xs-12" src="{{ post.image.url }}" style="height: 250px" alt="">
+                    </div> 
+                </div>
+                </br>
+            {% endfor %}
+            <div class="pagination text-center">
+                <span class="step-links">
+                    {% if paginator.has_previous %}
+                        <a href="?{{ page_request_variable }}={{ paginator.previous_page_number }}">previous</a>
+                    {% endif %}
+
+                    <span class="current">
+                        Page {{ paginator.number }} of {{ paginator.paginator.num_pages }}.
+                    </span>
+
+                    {% if paginator.has_next %}
+                        <a href="?{{ page_request_variable }}={{ paginator.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

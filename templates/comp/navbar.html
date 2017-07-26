@@ -1,0 +1,61 @@
+{% load staticfiles %}
+
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top ">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                
+                <img class="navbar-brand" src="https://logopond.com/logos/c41e886bf46fb87c62d17374c41d6f74.png" alt="">
+                <!--<a class="navbar-brand" href="#">Lorem ipsum <strong>dolor sit</strong> amet, consectetur.</a>-->
+                
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        
+                        <a href="#">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>    
+                            الدخول
+                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="#">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            التسجيل
+                        </a>
+                    </li>
+                    <li>
+                        <img class="navbar-brand" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Animated-Flag-Algeria.gif"  alt="animated-algeria-flag-image-0022"/>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="#">من نحن ؟<span class="sr-only">(current)</span></a></li>
+                    <li class="active"><a href="#">العلامة سيد الهواري</a></li>
+                    
+                </ul>
+               </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </body>
+
+        

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Articles</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.theme.green.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav>
+      <p>Reda ghadi ydirha</p>
+    </nav>
+
+    <main>
+      <div class="article-cover">
+        <div class="article-header">
+          <h2>My amazing title</h2>
+          <p class="article-date green">20/04/1995</p>
+        </div>
+        <div class="owl-carousel">
+          <div class="item">
+            <img src="https://unsplash.it/1001/300" alt="">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1002/300" alt="">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1000/300" alt="">
+          </div>
+          <div class="item">
+            <img src="https://unsplash.it/1003/300" alt="">
+          </div>
+          <div class="item">
+            <img src="http://i-like-robots.github.io/EasyZoom/example-images/3_zoom_1.jpg" alt="">
+          </div>
+        </div>
+        <hr align="center">
+        <div class="text-center cover-actions">
+          <p>This document contains 12 files</p>
+          <a href="#" class="btn btn-default">  <span class="glyphicon glyphicon-download-alt"></span> Download files</a>
+          <a href="#sharer" class="btn btn-default">  <span class="glyphicon glyphicon-share"></span> Share this page</a>
+        </div>
+        <hr align="center">
+      </div>
+      <div class="container">
+
+
+        <div class="clearfix"></div>
+        <div class="article-content">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium recusandae aperiam ipsam illum fuga laboriosam, itaque, quos molestias! Amet, excepturi, asperiores! Voluptas similique cumque, nam commodi tempore architecto iste!
+          </p>
+        </div>
+        <hr>
+        <h3 class="green">Using and sharing this content</h3>
+        <h4>Full Citation</h4>
+        <p>
+          House Journal of the First Session of the First Congress; 8/21/1789; Journal of the House of Representatives, 3/4/1789 - 2000; Records of the U.S. House of Representatives, Record Group 233; National Archives Building, Washington, DC. [Online Version, https://www.docsteach.org/documents/document/1-house-journal-of-the-first-session-of-the-first-congress, June 14, 2017]
+        </p>
+        <div class="text-center">
+          <h4 id="sharer">Share on social media</h4>
+          <span id="twitter">T</span> <span id="facebook">F</span>
+        </div>
+      </div>
+      <div class="poup-viewer">
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <script src="owl.carousel2.thumbs.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var currentURL = window.location;
+        $(".owl-carousel").owlCarousel({
+          items: 1,
+          autoplay:true,
+          loop:true,
+          margin:10,
+          dots:true,
+          dotData: true,
+          autoplayHoverPause: true,
+          thumbs: true,
+          thumbImage: true,
+          thumbContainerClass: 'owl-thumbs',
+          thumbItemClass: 'owl-thumb-item'
+          });
+
+      $(".owl-carousel .item").on('click', function(){
+        var _this = $(this).clone().find('img');
+        $('.poup-viewer')
+          .show()
+          .html(_this)
+          .on('click', function(){
+            $(this)
+              .html('')
+              .hide();
+          });
+
+          $('.poup-viewer img').on('click', function(e){
+            e.stopPropagation();
+          });
+      });
+
+      $("#twitter").html("<a href='https://twitter.com/intent/tweet?url="+ currentURL +"&text=" + document.title + "' target='_blank'><i class='fa fa-twitter-square social-icons' aria-hidden='true'></i></a>")
+      $("#facebook").html("<a href='https://www.facebook.com/sharer/sharer.php?u="+ currentURL + "' target='_blank'><i class='fa fa-facebook-square social-icons' aria-hidden='true'></i></a>")
+      });
+    </script>
+  </body>
+</html>

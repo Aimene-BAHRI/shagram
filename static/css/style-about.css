@@ -1,0 +1,20 @@
+.cv-cover{
+  background-size: cover;
+  background-image: url("https://www.vinyculture.com/wp-content/uploads/2016/10/sidi-el-houari-oran.jpg");
+  background-attachment: fixed;
+  height: 70vh;
+  padding: 7%;
+}
+
+.cv-text{
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+/* Repeated */
+.main-about-content{
+  margin-top: 20px;
+  font-size: 130%;
+  line-height: 1.4;
+}

@@ -1,0 +1,114 @@
+.article-cover img{
+  cursor: zoom-in;
+}
+
+.article-cover hr{
+  width:60%;
+}
+.article-header{
+  padding: 0  20px;
+}
+
+.owl-carousel{
+  margin: 30px 0;
+}
+
+.owl-carousel .owl-item, .owl-carousel .item {
+    height: 90vh;
+}
+
+.owl-carousel .owl-item img {
+    transform-style: initial;
+    height: 100%;
+    object-fit: cover;
+}
+
+.owl-thumb-item img {
+    width: 150px;
+    height: 60px;
+    margin: 5px;
+    -webkit-box-shadow: 2px 0px 2px black;
+    box-shadow: 2px 0px 2px black;
+
+}
+
+.owl-thumbs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    text-align: center;
+    padding: 1%;
+}
+
+.owl-thumb-item {
+    display: table-cell;
+    border: none;
+    background: none;
+    padding: 0;
+    opacity: .4;
+}
+
+.owl-thumb-item.active {
+    opacity: 1;
+}
+
+.label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #0a6cff;
+    color: white;
+    padding: 10px 20px;
+    z-index: 5;
+    text-align: center;
+}
+
+.article-content{
+  margin-top: 20px;
+  font-size: 140%;
+  line-height: 1.55;
+}
+
+.green{
+  color: #27ae60;
+}
+
+.poup-viewer{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+}
+
+.poup-viewer img{
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+
+.social-icons{
+  font-size: 50px;
+}
+
+.fa-twitter-square{
+  color: #00aced;
+}
+
+.fa-facebook-square{
+  color: #3b5998;
+}
+
+.copyme{
+  font-size: 14px;
+  line-height: 1.428;
+  color:  #333;
+}

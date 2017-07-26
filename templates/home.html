@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SHagram</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/logo.jpg">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+
+<body>
+    {% include 'comp/navbar.html' %}
+    <br>
+    <br>
+    <section id="home">
+        <div id="home-describ">
+            <h1>مؤسسة سيدي الهواري
+            </h1>
+            <h3>المتكلم <strong>الرسمي</strong> بإسم سيدي الهواري في وهران</h3>
+            <a href="#sidi-houari-home-about"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+        </div>
+
+    </section>
+    <section id="sidi-houari-home-about">
+        <div class="container">
+            <div class=" col-md-offset-1 col-md-10 text-center" id="about">
+                <h1>ماذا تعرف عن سيدي الهواري؟</h1>
+                <h2> من هو سيدي الهواري ؟</h2>
+                <p>
+                    هو الشيخ محمد بن عمر الهواري، علامة ويعده أهل وهران من أولياء الله الصالحين. ولد في جوار كلميتو على بعد 20 كلم من شرق مدينة مستغانم سنة 1350م- في ذلك الوقت كان يحكم وهران أبي حسن المريني
+                </p>
+                <img src="https://s-media-cache-ak0.pinimg.com/736x/7d/2c/a3/7d2ca308fa9f56f384d852063e936787.jpg" alt="">
+                <h2>What do you know about our Foundation ?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perferendis, magnam reprehenderit nemo
+                    fugit neque ipsam laboriconsectetur adipisicing elit. Ratione perferendis, magnam reprehenderit nemo
+                    fugit neque ipsam labori magnam reprehenderit nemo fugit neque ipsam labori osam eaque vitae incidunt
+                    magnam reprehenderit nemo fugit neque ipsam labori atque. Incidunt officia, praesentium soluta excepturi
+                    non obcaecati placeat maxime.</p>
+                <img src="http://www.aeroport-carcassonne.com/sites/default/files/oran-1.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <section id="association-home-about">
+        <div class="container">
+            <div class="text-center">
+                <h1>Random Association</h1>
+                <p>Lorem ipsum <strong>dolor sit</strong> amet, eum tempore maiores quo sunt quod,cupiditate incidunt quod recusandae.
+                    Error temporibus eos dolores nemo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum,
+                    in totam cum natus dignissimos tempore eaque et vero ipsa animi obcaecati cupiditate incidunt quod recusandae.
+                    Error temporibus eos dolores nemo.</p>
+            </div>
+            <!--<div class="col-md-6">
+                        <img src="https://jalakputihdotcom.files.wordpress.com/2014/12/20694-gambar2basosiasi.jpg" alt="" width="450" height="350">
+                    </div>-->
+        </div>
+    </section>
+    <section id="our-sponsors">
+        <div class="container text-center">
+            <div class="col-md-3 col-xs-6">
+                <img src="http://cdn.liberte-algerie.com/images/article/thumbs/d-djezzy-organise-une-ceremonie-en-lhonneur-des-enfants-circoncis-et-honore-ses-retraites-7bc38.jpg"
+                    alt="" height="100" width="100">
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="http://www.hb-technologies.com.dz/images/djmediatools/31.jpg" alt="" height="100" width="100">
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="http://proscom-tn.com/wp-content/uploads/2015/08/ooredoo1.png" alt="" height="100" width="100">
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sonatrach.svg/langfr-280px-Sonatrach.svg.png" alt=""
+                    height="100" width="100">
+            </div>
+        </div>
+    </section>
+    </main>
+    <!--End Content-->
+    <!--Footer-->
+    {% include 'comp/footer.html' %}
+    <!--End Footer-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

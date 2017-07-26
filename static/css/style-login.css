@@ -1,0 +1,37 @@
+.login-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  background-image: url('images/oran-fm.jpg');
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  opacity: .9
+}
+
+.login-container{
+  padding-top: 20vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.login-body{
+  padding: 5%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.login-credentials{
+}
+
+@media (max-width: 992px) {
+  .login-credentials button[type="submit"]{
+    display: block;
+    width: 100%;
+  }
+}
