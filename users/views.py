@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from .forms import ContactByMailForm
 
 # Create your views here.
@@ -16,7 +16,11 @@ def contact_us(request):
         form = ContactByMailForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            send_mail(cd['subject'], cd['message'],cd['email'], ["{}".format(settings.EMAIL_HOST_USER),])
+            message_to_send = "Sender: <strong>{} ({})</strong>.<br>Content:<br><br> {}".format(cd['name'],cd['email'], cd['message'])
+            email_subject = "[Fundation website] {}".format(cd['subject'])
+            msg = EmailMessage(email_subject, message_to_send,cd['email'], ["{}".format(settings.EMAIL_HOST_USER),],reply_to=[cd['email']])
+            msg.content_subtype = "html"
+            msg.send()
             sent = True
     else:
         form = ContactByMailForm()

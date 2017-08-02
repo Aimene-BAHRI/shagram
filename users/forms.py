@@ -49,7 +49,7 @@ class ContactByMailForm(forms.Form):
     """
         A form for handling Contact-Us section
     """
-    name = forms.CharField(max_length=32)
-    email = forms.EmailField()
-    subject = forms.CharField(max_length=100)
-    message = forms.CharField(required=True, widget=forms.Textarea)
+    name = forms.CharField(max_length=32, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
+    subject = forms.CharField(max_length=100, required=False, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    message = forms.CharField(required=True, widget=forms.Textarea(attrs={'class': 'form-control'}))

@@ -3,17 +3,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shagram</title>
+    <title>{% block title %} Shagram {% endblock%}</title>
     <link rel="shortcut icon" href="{% static 'images/logo.jpg' %}">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="" href="{% static 'css/index.css' %}">
     <link rel="stylesheet" type="" href="{% static 'css/font-awesome.min.css' %}">
+    {% block meta %}
+    {% endblock %}
 </head>
 <body>
     {% include "comp/navbar.html" %}
-    {% block content %} 
-    {% endblock %} 
+    {% block content %}
+    {% endblock %}
     <div class="container-fluid">
         {% include "comp/footer.html" %}
     </div>
