@@ -2,3 +2,4 @@
 shagram.tar.gz
 *.pyc
 migrations/
+config_secrets.py
