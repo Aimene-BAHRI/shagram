@@ -1,2 +1,4 @@
 .vscode/
 shagram.tar.gz
+*.pyc
+migrations/
