@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import config_secrets as con_s #File containing secret crediantials and ignored by Git
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -133,3 +134,10 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Email settings
+EMAIL_HOST = con_s.EMAIL_HOST
+EMAIL_HOST_USER = con_s.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = con_s.EMAIL_HOST_PASSWORD
+EMAIL_PORT = con_s.EMAIL_PORT
+EMAIL_USE_TLS = con_s.EMAIL_USE_TLS

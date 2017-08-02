@@ -1,21 +1,21 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
-from .models import CustomUser , StaffUser , ScientificUser 
+from .models import CustomUser , StaffUser , ScientificUser
 
 
 class StaffUserCreationForm(UserCreationForm):
-    class Meta : 
+    class Meta :
         model = StaffUser
         fields = ("email",)
 
 class StaffUserChangeForm(UserChangeForm):
-    class Meta : 
+    class Meta :
         model = StaffUser
         fields = ("email",)
 
 class ScientificUserCreationForm(UserCreationForm):
-    class Meta : 
+    class Meta :
         model = ScientificUser
         fields = ("email",)
 
@@ -31,7 +31,7 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ("email",)
-    
+
 class CustomUserChangeForm(UserChangeForm):
     """A form for updating users. Includes all the fields on
     the user, but replaces the password field with admin's
@@ -45,3 +45,11 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ("email",)
 
+class ContactByMailForm(forms.Form):
+    """
+        A form for handling Contact-Us section
+    """
+    name = forms.CharField(max_length=32)
+    email = forms.EmailField()
+    subject = forms.CharField(max_length=100)
+    message = forms.CharField(required=True, widget=forms.Textarea)

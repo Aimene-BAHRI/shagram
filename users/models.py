@@ -3,10 +3,9 @@ from django.utils import timezone
 from django.utils.http import urlquote
 from django.utils.translation import ugettext_lazy as _
 from django.core.mail import send_mail
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin 
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.conf import settings
 from django.contrib.auth.models import BaseUserManager
-from django_countries.fields import CountryField
 
 # from posts.models import Article
 
@@ -34,7 +33,7 @@ class CustomUserManager(BaseUserManager):
         return self._create_user(email, password, True , False,
                                  **extra_fields)
 
-                               
+
     def create_superuser(self, email, password, **extra_fields):
         return self._create_user(email, password, True, True,
                                  **extra_fields)
@@ -43,15 +42,15 @@ class CustomUserManager(BaseUserManager):
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     """
-    Creating a CustomUser model which defines 
+    Creating a CustomUser model which defines
     """
 
     email = models.EmailField(_('email address'), max_length=254, unique=True)
     first_name = models.CharField(max_length = 25)
     last_name = models.CharField(max_length = 25)
-    
-    
-    
+
+
+
     is_superuser = models.BooleanField(_('superuser status'), default=False,
         help_text=_('Designates whether the user can log into this admin '
                     'site.'))
@@ -60,7 +59,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
                     'site.'))
     is_active= models.BooleanField(_('staff status'), default=True,
         help_text=_('Designates whether the user has the permission to publish articles'))
-    
+
 
     date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
 
@@ -93,7 +92,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         """
         send_mail(subject, message, from_email, [self.email])
 
-    
+
 
 
 
@@ -102,9 +101,9 @@ class StaffUser(CustomUser , PermissionsMixin):
     phone_number = models.CharField(max_length = 25)
     is_member = models.BooleanField(default = True)
 
-    
-    
-    
+
+
+
 
 class ScientificUser(CustomUser , PermissionsMixin):
     image = models.ImageField(blank = True)
@@ -113,5 +112,3 @@ class ScientificUser(CustomUser , PermissionsMixin):
     grad = models.CharField(max_length = 25 , blank = True)
     cv = models.FileField(blank = True)
     is_member = models.BooleanField(default = False)
-
-    
