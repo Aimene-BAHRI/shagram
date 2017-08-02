@@ -15,8 +15,9 @@ from events.models import Event
 from .forms import PostForm, ImageForm
 # Display all categories and all posts
 def index(request):
-    posts = Article.objects.all().order_by('-posted')
+    posts = Article.objects.all().order_by('-posted')[:5]
     categories = Categorie.objects.all().order_by('-id')
+    images = Images.objects.all().order_by('-id')
     events = Event.objects.all().order_by('-id')
     today = timezone.now().date()
     paginator = Paginator(posts, 2) # Show 2 contacts per page
@@ -34,6 +35,7 @@ def index(request):
     context = {
     'categories': categories,
     'posts' : posts,
+    'images' : images,
     'events' : events,
     'today' : today,
     'paginator': queryset,
@@ -43,7 +45,7 @@ def index(request):
 
 # Create Post
 def post_create(request):
-    ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=3)
+    ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=1)
     if request.method == 'POST':
         postForm = PostForm(request.POST)
         formset = ImageFormSet(request.POST, request.FILES, queryset=Images.objects.none())
@@ -57,7 +59,7 @@ def post_create(request):
                 photo.save()
             messages.success(request,
                              "Yeeew,check it out on the home page!")
-            return HttpResponseRedirect("/")
+            return HttpResponseRedirect("/blog")
         else:
             print postForm.errors, formset.errors
     else:

@@ -74,7 +74,9 @@
                                 <p><strong>الكاتب : </strong><a href="">{{post.author}}</a></p>
                             </div>
                         </div>
-                        <img class="col-md-offset-0 col-md-4 col-sm-12 col-xs-12" src="{{ post.image.url }}" style="height: 250px" alt="">
+                        {% for image in images %}
+                            <img class="col-md-offset-0 col-md-4 col-sm-12 col-xs-12" src="{{ image.image.url }}" style="height: 250px" alt="">
+                        {% endfor %}
                     </div> 
                 </div>
                 </br>
