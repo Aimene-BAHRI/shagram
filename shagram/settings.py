@@ -54,7 +54,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'shagram.urls'
-ALLOWED_HOSTS = ['localhost', 'sef.ngrok.io']
+ALLOWED_HOSTS = ['localhost', 'sef.ngrok.io', '127.0.0.1']
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

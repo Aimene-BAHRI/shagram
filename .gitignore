@@ -3,3 +3,5 @@ shagram.tar.gz
 *.pyc
 migrations/
 shagram/config_secrets.py
+db.sqlite3
+db.sqlite

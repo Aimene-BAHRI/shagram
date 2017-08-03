@@ -19,7 +19,7 @@ admin.autodiscover()
 from django.conf import settings
 from django.conf.urls.static import static
 from .views import home
-from users.views import contact_us
+from users.views import contact_us, registration_demand
 urlpatterns = [
     # Sidi Al-houari Home Page
     url(r'^$', view=home, name='home'),
@@ -31,6 +31,8 @@ urlpatterns = [
 
     # Contact us
     url(r'^contact/', view=contact_us, name="contact_us"),
+    # Registration urls
+    url(r'^register/', view=registration_demand, name="registration"),
 
 ]
 
