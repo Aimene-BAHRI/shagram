@@ -21,7 +21,7 @@ def upload_location(instance, filename):
 
 # Create your models here.
 class Article(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, default = settings.AUTH_USER_MODEL)
+    author = models.ForeignKey(CustomUser, related_name='articles')
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     body = models.TextField()
@@ -31,6 +31,7 @@ class Article(models.Model):
     sources = models.TextField(null = True)
     document = models.FileField(blank = True, null = True)
     language = models.CharField(max_length = 60,choices=LANGUAGES, default = 'ARABE')
+    published = models.BooleanField(default = False)
    
     def __str__(self):
         return self.title
@@ -40,6 +41,7 @@ class Article(models.Model):
 
     class Meta:
         ordering = ["-posted", "-updated"]
+        verbose_name_plural = 'articles'
 
 class Categorie(models.Model):
     title = models.CharField(max_length=100, db_index=True)
@@ -47,8 +49,13 @@ class Categorie(models.Model):
 
     def __str__(self):
         return self.title
+    class Meta:
+        verbose_name_plural = 'categories'
 
 class Images(models.Model):
     image = models.ImageField(upload_to = upload_location, verbose_name='Image')
-    post = models.ForeignKey(Article, default = None) 
+    post = models.ForeignKey(Article, default = None)
+
+    class Meta:
+        verbose_name_plural = 'images'
 

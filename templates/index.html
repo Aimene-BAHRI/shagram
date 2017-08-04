@@ -61,25 +61,27 @@
                 </form>
             </div>
             {% for post in posts %}
-                <div class="row" style="height: 500px;border:3px double #27AE61">    
-                    <div class="col-md-offset-0 col-md-12 col-sm-12 col-xs-12">
-                        <br>
-                        <div class="col-md-offset-0 col-md-8 col-sm-12 col-xs-12">
-                            <div class="post">
-                                <h2><strong>العنوان : </strong><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h2> 
-                                <hr>
-                                <p><strong>الوصف : </strong>{{post.body}}</p>
-                                <p><strong>الزمان : </strong>{{post.posted}}</p>
-                                <p><strong>القسم : </strong>{{post.categorie}}</p>
-                                <p><strong>الكاتب : </strong><a href="">{{post.author}}</a></p>
+                {% if post.published %}
+                    <div class="row" style="height: 500px;border:3px double #27AE61">
+                        <div class="col-md-offset-0 col-md-12 col-sm-12 col-xs-12">
+                            <br>
+                            <div class="col-md-offset-0 col-md-8 col-sm-12 col-xs-12">
+                                <div class="post">
+                                    <h2><strong>العنوان : </strong><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h2> 
+                                    <hr>
+                                    <p><strong>الوصف : </strong>{{post.body}}</p>
+                                    <p><strong>الزمان : </strong>{{post.posted}}</p>
+                                    <p><strong>القسم : </strong>{{post.categorie}}</p>
+                                    <p><strong>الكاتب : </strong><a href="">{{post.author}}</a></p>
+                                </div>
                             </div>
-                        </div>
-                        {% for image in images %}
-                            <img class="col-md-offset-0 col-md-4 col-sm-12 col-xs-12" src="{{ image.image.url }}" style="height: 250px" alt="">
-                        {% endfor %}
-                    </div> 
-                </div>
-                </br>
+                            {% for image in images %}
+                                <img class="col-md-offset-0 col-md-4 col-sm-12 col-xs-12" src="{{ image.image.url }}" style="height: 250px" alt="">
+                            {% endfor %}
+                        </div> 
+                    </div>
+                    </br>
+                {% endif %}
             {% endfor %}
             <div class="pagination text-center">
                 <span class="step-links">

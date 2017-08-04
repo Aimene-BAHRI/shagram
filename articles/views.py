@@ -5,6 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.forms import modelformset_factory
 from django.template import RequestContext
+from django.views.decorators.csrf import csrf_protect
 # Paginator
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -14,13 +15,14 @@ from events.models import Event
 
 from .forms import PostForm, ImageForm
 # Display all categories and all posts
+@csrf_protect
 def index(request):
     posts = Article.objects.all().order_by('-posted')[:5]
     categories = Categorie.objects.all().order_by('-id')
     images = Images.objects.all().order_by('-id')
     events = Event.objects.all().order_by('-id')
     today = timezone.now().date()
-    paginator = Paginator(posts, 2) # Show 2 contacts per page
+    paginator = Paginator(posts, 5) # Show 2 contacts per page
     page_request_variable = 'page'
     page = request.GET.get(page_request_variable)
     try:
@@ -44,6 +46,7 @@ def index(request):
     return render(request, 'index.html', context)
 
 # Create Post
+@csrf_protect
 def post_create(request):
     ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=1)
     if request.method == 'POST':
@@ -74,23 +77,28 @@ def post_create(request):
                       })
 
 # Display the post
+@csrf_protect
 def post_detail(request, id):
     article = get_object_or_404(Article, pk=id)
     events = Event.objects.all().order_by('-id')
+    images = Images.objects.all().order_by('-id')
     today = timezone.now().date()
     context ={
         'article' : article,
         'events' : events,
-        'today' : today
+        'today' : today,
+        'images' : images
     }
     return render(request, 'detail.html', context)
 # Display the first 2 posts in a specefic category
 
 # Create Post
+@csrf_protect
 def post_update(request, id):
     return HttpResponse("<h1>Update POST "+id+" </h1>")
 
 # Create Post
+@csrf_protect
 def post_delete(request, id):
     return HttpResponse("<h1>Delete POST "+id+" </h1>")
 

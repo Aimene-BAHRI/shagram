@@ -13,9 +13,8 @@ class ProjectImageInline(admin.StackedInline):
     max_num=10
     extra=0
 
-
 class BlogAdmin(admin.ModelAdmin):
-    exclude = ['posted']
+    exclude = ['author']
     prepopulated_fields = {'slug': ('title',)}
     list_display = ['title', 'updated', 'posted', 'author']
     list_display_link = ['title']
@@ -25,13 +24,14 @@ class BlogAdmin(admin.ModelAdmin):
         model = Article
         verbose_name = 'article'
         verbose_name_plural = 'articles'
+    
+    def save_model(self, request, obj, form, change):
+        if not change:
+            obj.author = request.user
+        obj.save()
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
-
-
-
 admin.site.register(Article, BlogAdmin)
 admin.site.register(Categorie, CategoryAdmin)
-admin.site.register(Images, ProjectImageAdmin)

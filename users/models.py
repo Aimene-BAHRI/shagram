@@ -93,18 +93,9 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         """
         send_mail(subject, message, from_email, [self.email])
 
-    
-
-
-
-
 class StaffUser(CustomUser , PermissionsMixin):
     phone_number = models.CharField(max_length = 25)
     is_member = models.BooleanField(default = True)
-
-    
-    
-    
 
 class ScientificUser(CustomUser , PermissionsMixin):
     image = models.ImageField(blank = True)
