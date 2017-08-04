@@ -1,0 +1,75 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/style-articles.css' %}">
+{% block content %}
+<br>
+<br>
+<div class="container-fluid">
+    {% if events %}
+        {% for event in events %}
+            {% if event.timing > today %}
+                <div class="col-md-offset-0 col-md-12 text-right" style="color: aliceblue;
+                    background-image: url('https://bootsnipp.com/dist/img/header-bg.jpg?ver=2.0.0');
+                    background-size: cover">
+                    <div class="row">
+                        <div class="col-md-offsect-0 col-md-12 col-sm-12 col-xs-12">
+                            <div class="post">
+                                <h2 class="text-center"><strong>العنوان : </strong>{{event.title}}</h2>
+                                <p><strong>الوصف : </strong>{{event.content}}</p>
+                                <div class="col-md-6  col-sm-6 col-xs-12"><p><strong>المكان : </strong>{{event.place}}</p></div>
+                                <div class="col-md-6  col-sm-6 col-xs-12"><p><strong>الزمان : </strong>{{event.timing}}</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            </hr>
+        {% endfor %}
+        <br>
+    {% endif %}
+    <br>
+    <div class="clo-xs-12 clo-sm-12 col-md-12 col-lg-12 col-md-offset-0 text-right"
+    style="color: aliceblue;
+                    background-image: url('https://i.ytimg.com/vi/jNT3O4NlSTo/maxresdefault.jpg');
+                    background-size: cover">
+        <h1 class="text-center">الأقسام</h1>
+        {% if categories %}
+            {% for category in categories %}
+            <button class="btn btn-default">
+                <a href="#">{{ category.title }}</a>
+            </button>
+            {% endfor %}
+            <hr>
+        {% endif %}
+    </div>
+    <hr>
+    <div class="col-md-offset-0 col-md-12 text-right">
+        <h1 class="text-center">المقالات</h1>
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+
+{% if "query" in request.GET %}
+<h1>Posts containing "{{ cd.query }}"</h1>
+<h3>Found {{ total_results }} result{{ total_results|pluralize}}</h3>
+  {% for result in results %}
+    {% with post=result.object %}
+      <h4><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
+      {{ post.body|truncatewords:5 }}
+    {% endwith %}
+  {% empty %}
+    <p>There are no results for your query.</p>
+  {% endfor %}
+{% else %}
+  <h1>Search for posts</h1>
+  <form action="." method="get">
+    {{ form.as_p }}
+    <input type="submit" value="Search">
+  </form>
+{% endif %}
+<!--  -->
+<!--  -->
+<!--  -->
+{% endblock %}

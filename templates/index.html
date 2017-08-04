@@ -1,5 +1,5 @@
 
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load staticfiles %}
 <link rel="stylesheet" href="{% static 'css/style-articles.css' %}">
 {% block content %}
@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-offsect-0 col-md-12 col-sm-12 col-xs-12">
                             <div class="post">
-                                <h2 class="text-center"><strong>العنوان : </strong>{{event.title}}</h2> 
+                                <h2 class="text-center"><strong>العنوان : </strong>{{event.title}}</h2>
                                 <p><strong>الوصف : </strong>{{event.content}}</p>
                                 <div class="col-md-6  col-sm-6 col-xs-12"><p><strong>المكان : </strong>{{event.place}}</p></div>
                                 <div class="col-md-6  col-sm-6 col-xs-12"><p><strong>الزمان : </strong>{{event.timing}}</p></div>
@@ -29,17 +29,17 @@
         <br>
     {% endif %}
     <br>
-    <div class="clo-xs-12 clo-sm-12 col-md-12 col-lg-12 col-md-offset-0 text-right" 
+    <div class="clo-xs-12 clo-sm-12 col-md-12 col-lg-12 col-md-offset-0 text-right"
     style="color: aliceblue;
                     background-image: url('https://i.ytimg.com/vi/jNT3O4NlSTo/maxresdefault.jpg');
                     background-size: cover">
         <h1 class="text-center">الأقسام</h1>
-        {% if categories %} 
+        {% if categories %}
             {% for category in categories %}
             <button class="btn btn-default">
                 <a href="#">{{ category.title }}</a>
-            </button> 
-            {% endfor %} 
+            </button>
+            {% endfor %}
             <hr>
         {% endif %}
     </div>
@@ -49,24 +49,24 @@
         {% if posts %}
             <div class="col-md-12 search-box">
                 <h3>البحث في المقالات</h3>
-                <form class="" action="index.html" method="post">
+                <form class="" action="search" method="get">
                 <div class="row">
                     <div class="form-group col-md-2">
                         <button class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> البحث </button>
                     </div>
                     <div class="form-group col-md-10">
-                        <input type="text" class="form-control input-lg text-center" placeholder="ابحث عن مقالة حسب الكلمة الرئيسية">
+                        <input name="query" type="text" class="form-control input-lg text-center" placeholder="ابحث عن مقالة حسب الكلمة الرئيسية">
                     </div>
                 </div>
                 </form>
             </div>
             {% for post in posts %}
-                <div class="row" style="height: 500px;border:3px double #27AE61">    
+                <div class="row" style="height: 500px;border:3px double #27AE61">
                     <div class="col-md-offset-0 col-md-12 col-sm-12 col-xs-12">
                         <br>
                         <div class="col-md-offset-0 col-md-8 col-sm-12 col-xs-12">
                             <div class="post">
-                                <h2><strong>العنوان : </strong><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h2> 
+                                <h2><strong>العنوان : </strong><a href="{{ post.get_absolute_url }}">{{post.title}}</a></h2>
                                 <hr>
                                 <p><strong>الوصف : </strong>{{post.body}}</p>
                                 <p><strong>الزمان : </strong>{{post.posted}}</p>
@@ -77,7 +77,7 @@
                         {% for image in images %}
                             <img class="col-md-offset-0 col-md-4 col-sm-12 col-xs-12" src="{{ image.image.url }}" style="height: 250px" alt="">
                         {% endfor %}
-                    </div> 
+                    </div>
                 </div>
                 </br>
             {% endfor %}

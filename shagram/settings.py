@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import config_secrets as con_s #File containing secret crediantials and ignored by Git
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whoosh',
+    'haystack',
     'articles',
     'events',
     'users',
@@ -141,3 +144,12 @@ EMAIL_HOST_USER = con_s.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = con_s.EMAIL_HOST_PASSWORD
 EMAIL_PORT = con_s.EMAIL_PORT
 EMAIL_USE_TLS = con_s.EMAIL_USE_TLS
+
+# Whoosh and Haystack setup
+WHOOSH_INDEX = os.path.join(BASE_DIR, "whoosh")
+HAYSTACK_CONNECTIONS = {
+    'default': {
+         'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+         'PATH': WHOOSH_INDEX,
+    },
+}

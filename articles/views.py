@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.utils import timezone
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse
 from django.forms import modelformset_factory
 from django.template import RequestContext
 # Paginator
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+# Search
+from haystack.query import SearchQuerySet
+from articles.forms import SearchForm
 
-# Create your views here.
 from articles.models import Article, Categorie, Images
 from events.models import Event
 
@@ -68,7 +70,7 @@ def post_create(request):
     context_instance=RequestContext(request)
     return render(request, 'post_form.html',
                   {
-                      'postForm': postForm, 
+                      'postForm': postForm,
                       'formset': formset,
                       'context_instance' : context_instance
                       })
@@ -94,3 +96,28 @@ def post_update(request, id):
 def post_delete(request, id):
     return HttpResponse("<h1>Delete POST "+id+" </h1>")
 
+# Search view
+def post_search(request):
+    form = SearchForm()
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+
+        if form.is_valid():
+            cd = form.cleaned_data
+            results = SearchQuerySet().models(Article).filter(content=cd['query']).load_all()
+            # count total results
+            total_results = results.count()
+        else:
+            cd = ''
+            results = ""
+            total_results = 0
+    else:
+        cd = ''
+        results = ""
+        total_results = 0
+    return render(request,
+                  'search/search.html',
+                  {'form': form,
+                   'cd': cd,
+                   'results': results,
+                   'total_results': total_results})
